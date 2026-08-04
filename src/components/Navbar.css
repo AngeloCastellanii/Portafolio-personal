@@ -55,6 +55,36 @@
   color: var(--color-accent);
 }
 
+.navbar__user {
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.navbar__logout {
+  padding: var(--space-xs) var(--space-sm);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.navbar__logout:hover {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+  background: var(--color-surface);
+}
+
 @media (max-width: 560px) {
   .navbar__inner {
     flex-direction: column;

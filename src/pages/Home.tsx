@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 import './Home.css'
 
 export function Home() {
+  const { isAuthenticated } = useAuth()
+
   return (
     <section className="home">
       <p className="home__eyebrow">Desarrollador frontend</p>
@@ -13,9 +16,11 @@ export function Home() {
         <Link to="/proyectos" className="home__btn home__btn--primary">
           Ver proyectos
         </Link>
-        <Link to="/login" className="home__btn home__btn--ghost">
-          Iniciar sesión
-        </Link>
+        {!isAuthenticated ? (
+          <Link to="/login" className="home__btn home__btn--ghost">
+            Iniciar sesión
+          </Link>
+        ) : null}
       </div>
     </section>
   )
