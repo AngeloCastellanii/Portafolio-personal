@@ -75,3 +75,26 @@
     transform: translateY(0);
   }
 }
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  animation: home-in 0.55s ease both;
+  animation-delay: 0.08s;
+}
+
+.home-section__title {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.home-section__text {
+  max-width: 36rem;
+  color: var(--color-text-muted);
+}

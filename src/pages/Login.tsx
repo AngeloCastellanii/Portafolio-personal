@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import { validateLogin } from '../utils/validation'
 import './Page.css'
 import './AuthForm.css'
 
@@ -18,6 +19,12 @@ export function Login() {
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
+    const validationError = validateLogin({ email, password })
+    if (validationError) {
+      setError(validationError)
+      return
+    }
+
     setError('')
     setLoading(true)
     try {
@@ -74,6 +81,8 @@ export function Login() {
 
         <p className="auth-form__footer">
           ¿No tienes cuenta? <Link to="/registro">Regístrate</Link>
+          <br />
+          ¿Problemas para entrar? <Link to="/cuenta">Recuperar o borrar cuenta</Link>
         </p>
       </form>
     </section>

@@ -98,3 +98,46 @@ export async function login(input: {
 export function logout() {
   clearSession()
 }
+
+export async function resetPassword(input: {
+  email: string
+  password: string
+}): Promise<void> {
+  const email = input.email.trim().toLowerCase()
+  const password = input.password
+
+  if (!email || password.length < 6) {
+    throw new Error('Correo válido y contraseña de al menos 6 caracteres.')
+  }
+
+  const db = await getDb()
+  const user = await db.getFromIndex('users', 'by-email', email)
+  if (!user) {
+    throw new Error('No existe una cuenta con ese correo.')
+  }
+
+  await db.put('users', {
+    ...user,
+    passwordHash: await hashPassword(password),
+  })
+}
+
+export async function deleteAccount(email: string): Promise<void> {
+  const normalized = email.trim().toLowerCase()
+  if (!normalized) {
+    throw new Error('Ingresa el correo de la cuenta.')
+  }
+
+  const db = await getDb()
+  const user = await db.getFromIndex('users', 'by-email', normalized)
+  if (!user) {
+    throw new Error('No existe una cuenta con ese correo.')
+  }
+
+  await db.delete('users', user.id)
+
+  const session = getSession()
+  if (session?.email === normalized) {
+    clearSession()
+  }
+}

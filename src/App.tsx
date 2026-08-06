@@ -5,8 +5,10 @@ import { ProtectedRoute } from './components/ProtectedRoute'
 import { GuestRoute } from './components/GuestRoute'
 import { Home } from './pages/Home'
 import { Projects } from './pages/Projects'
+import { ProjectDetail } from './pages/ProjectDetail'
 import { Login } from './pages/Login'
 import { Register } from './pages/Register'
+import { AccountHelp } from './pages/AccountHelp'
 
 function App() {
   return (
@@ -24,6 +26,14 @@ function App() {
               }
             />
             <Route
+              path="proyectos/:slug"
+              element={
+                <ProtectedRoute>
+                  <ProjectDetail />
+                </ProtectedRoute>
+              }
+            />
+            <Route
               path="login"
               element={
                 <GuestRoute>
@@ -36,6 +46,14 @@ function App() {
               element={
                 <GuestRoute>
                   <Register />
+                </GuestRoute>
+              }
+            />
+            <Route
+              path="cuenta"
+              element={
+                <GuestRoute>
+                  <AccountHelp />
                 </GuestRoute>
               }
             />

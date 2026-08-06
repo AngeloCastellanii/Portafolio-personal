@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import { validateRegister } from '../utils/validation'
 import './Page.css'
 import './AuthForm.css'
 
@@ -16,6 +17,12 @@ export function Register() {
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
+    const validationError = validateRegister({ name, email, password })
+    if (validationError) {
+      setError(validationError)
+      return
+    }
+
     setError('')
     setLoading(true)
     try {

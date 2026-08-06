@@ -82,3 +82,54 @@
 .auth-form__footer a:hover {
   color: var(--color-accent-hover);
 }
+
+.auth-form__modes {
+  display: flex;
+  gap: 0.35rem;
+  width: 100%;
+  max-width: 24rem;
+  margin-top: var(--space-sm);
+  padding: 0.3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: var(--color-bg-elevated);
+}
+
+.auth-form__mode {
+  flex: 1;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  border-radius: 0.55rem;
+  cursor: pointer;
+}
+
+.auth-form__mode--active {
+  color: #0b120f;
+  background: var(--color-accent);
+}
+
+.auth-form__success {
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.9rem;
+  color: #c8f0d8;
+  background: rgba(61, 186, 138, 0.15);
+  border: 1px solid rgba(61, 186, 138, 0.35);
+  border-radius: 0.5rem;
+}
+
+.auth-form__inline-link {
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
