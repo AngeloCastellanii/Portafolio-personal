@@ -9,6 +9,7 @@ import { ProjectDetail } from './pages/ProjectDetail'
 import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import { AccountHelp } from './pages/AccountHelp'
+import { Profile } from './pages/Profile'
 
 function App() {
   return (
@@ -30,6 +31,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <ProjectDetail />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="perfil"
+              element={
+                <ProtectedRoute>
+                  <Profile />
                 </ProtectedRoute>
               }
             />

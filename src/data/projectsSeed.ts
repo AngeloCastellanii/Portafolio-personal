@@ -285,4 +285,53 @@ export function suggestWakeTimes(bedtime: Date, cycles = 5): Date[] {
       },
     ],
   },
+  {
+    id: 'proj-portafolio-angelo',
+    slug: 'portafolio-angelo',
+    title: 'Portafolio Angelo',
+    summary:
+      'Catálogo personal de páginas web con presentación de proyectos y navegación clara entre casos.',
+    description:
+      'Portafolio Angelo es una vitrina digital de trabajos web. Organiza proyectos en un catálogo visual para mostrar entregas, demos y el estilo de interfaz de cada producto.',
+    coverImage: preview('portafolio-angelo'),
+    technologies: ['React', 'TypeScript', 'Vite', 'Vercel'],
+    liveUrl: 'https://portafolio-angelo-sage.vercel.app/',
+    featured: true,
+    createdAt: Date.parse('2026-05-20'),
+    evidence: [
+      {
+        type: 'image',
+        src: preview('portafolio-angelo'),
+        alt: 'Captura de Portafolio Angelo',
+      },
+      {
+        type: 'video',
+        src: 'https://portafolio-angelo-sage.vercel.app/',
+        title: 'Demo en vivo — Portafolio Angelo',
+      },
+      {
+        type: 'code',
+        language: 'tsx',
+        content: `export function ProjectCatalog({ projects }: { projects: Project[] }) {
+  return (
+    <section className="catalog">
+      <h1>Catálogo de páginas web</h1>
+      <ul>
+        {projects.map((project) => (
+          <li key={project.id}>
+            <a href={project.url}>{project.title}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}`,
+      },
+      {
+        type: 'link',
+        url: 'https://portafolio-angelo-sage.vercel.app/',
+        label: 'Abrir Portafolio Angelo',
+      },
+    ],
+  },
 ]

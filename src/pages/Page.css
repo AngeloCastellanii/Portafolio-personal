@@ -3,12 +3,12 @@
   flex-direction: column;
   gap: var(--space-md);
   max-width: 40rem;
-  animation: page-in 0.4s ease both;
+  animation: page-in 0.45s var(--ease-out) both;
 }
 
 .page__title {
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.1rem, 5vw, 2.9rem);
+  letter-spacing: -0.03em;
 }
 
 .page__text {
@@ -19,7 +19,7 @@
 @keyframes page-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;

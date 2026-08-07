@@ -9,5 +9,5 @@
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-xl) var(--space-md) var(--space-2xl);
 }
