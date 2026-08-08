@@ -56,6 +56,14 @@ export function Navbar() {
           <NavLink to="/proyectos" className={linkClass}>
             Proyectos
           </NavLink>
+          <a
+            className="navbar__link"
+            href="https://github.com/AngeloCastellanii"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
           {isAuthenticated ? (
             <NavLink to="/perfil" className={linkClass}>
               {user?.name ?? 'Perfil'}

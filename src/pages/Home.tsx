@@ -46,6 +46,14 @@ export function Home() {
             <Link to="/proyectos" className="home__btn home__btn--primary">
               Ver proyectos
             </Link>
+            <a
+              className="home__btn home__btn--ghost"
+              href="https://github.com/AngeloCastellanii"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
             {!isAuthenticated ? (
               <Link to="/login" className="home__btn home__btn--ghost">
                 Iniciar sesión

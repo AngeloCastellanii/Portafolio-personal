@@ -29,6 +29,26 @@
   color: var(--color-text-muted);
 }
 
+.footer__github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 0.85rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0b120f;
+  background: var(--color-accent);
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease, transform 0.2s var(--ease-out);
+}
+
+.footer__github:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
 .footer__nav {
   display: flex;
   flex-wrap: wrap;
